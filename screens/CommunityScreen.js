@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 
-function DetailsScreen({navigation}) {
+function CommunityScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Details Screen</Text>
@@ -15,4 +15,4 @@ function DetailsScreen({navigation}) {
 
 
 
-  export default DetailsScreen;
+  export default CommunityScreen;

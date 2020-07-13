@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 
-function ProfileScreen({navigation}) {
+function ForestScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
@@ -14,4 +14,4 @@ function ProfileScreen({navigation}) {
 }
 
 
-  export default ProfileScreen;
+  export default ForestScreen;

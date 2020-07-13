@@ -3,11 +3,11 @@ import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 
 function HomeScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#ffff'}}>
       <Text>Home Screen</Text>
       <Button 
-      title = 'Details'
-      onPress = {() =>navigation.navigate('Details')}
+      title = 'Community'
+      onPress = {() =>navigation.navigate('Community')}
       />
     </View>
   );

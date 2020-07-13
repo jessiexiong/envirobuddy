@@ -3,11 +3,13 @@ import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Emoji from 'react-native-emoji';
+
 
 import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
-// import ExploreScreen from './ExploreScreen';
- import ProfileScreen from './ProfileScreen';
+import CommunityScreen from './CommunityScreen';
+import ExploreScreen from './ExploreScreen';
+import ForestScreen from './ForestScreen';
 
 const HomeStack = createStackNavigator();
 
@@ -29,35 +31,36 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name='Details'
-      component={DetailsScreen}
+      name='Community'
+      component={CommunityScreen}
       options={{
-        tabBarLabel: 'Details',
-        tabBarIcon: ({ color }) => (
-          <Icon name="ios-home" color={color} size={26} />
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Profile"
-      component={ProfileScreen}
-      options={{
-        tabBarLabel: 'Profile',
-        tabBarIcon: ({ color }) => (
-          <Icon name="ios-notifications" color={color} size={26} />
-        ),
-      }}
-    />
-    {/* <Tab.Screen
-      name="Profile" //this name is what you use to help navigate
-      options={{
-        tabBarLabel: 'Profile',
-
+        tabBarLabel: 'Community',
+        
         tabBarIcon: ({ color }) => (
           <Icon name="ios-person" color={color} size={26} />
         ),
       }}
-    /> */}
+    />
+   <Tab.Screen
+      name="Forest" //this name is what you use to help navigate
+      component={ForestScreen}
+      options={{
+        tabBarLabel: 'Forest',
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-person" color={color} size={26} />
+        ),
+      }}
+    /> 
+        <Tab.Screen
+      name="Profile"
+      component={ForestScreen}
+      options={{
+        tabBarLabel: 'Profile',
+        tabBarIcon: ({ color }) => (
+          <Icon name="ios-compass" color={color} size={26} />
+        ),
+      }}
+    />
   </Tab.Navigator>
 );
 
