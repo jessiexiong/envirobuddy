@@ -54,6 +54,7 @@ const MainTabScreen = () => (
       component={ForestScreen}
       options={{
         tabBarLabel: 'Profile',
+        
         tabBarIcon: ({ color }) => (
           <Icon name="ios-compass" color={color} size={26} />
         ),
