@@ -8,8 +8,6 @@ var images = [
     { id: 1, src: require('../assets/1.jpg') },
     { id: 2, src: require('../assets/2.jpg') },
     { id: 3, src: require('../assets/3.jpg') },
-
-
   ]
 
 function HomeScreen({navigation}) {

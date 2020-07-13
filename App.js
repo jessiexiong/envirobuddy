@@ -10,8 +10,7 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        {/* Where you name the header */}
+      <Stack.Navigator >
         <Stack.Screen name='Home' component={MainTabScreen}         
         options={{ title: 'EnviroBuddy' }}
  />

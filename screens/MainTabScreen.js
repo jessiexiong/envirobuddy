@@ -3,8 +3,6 @@ import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Emoji from 'react-native-emoji';
-
 
 import HomeScreen from './HomeScreen';
 import CommunityScreen from './CommunityScreen';
@@ -17,8 +15,6 @@ const Tab = createBottomTabNavigator();
 
 const MainTabScreen = () => (
     <Tab.Navigator
-    initialRouteName="Home"
-    style={{ backgroundColor: 'tomato' }}
   >
     <Tab.Screen
       name='Home'

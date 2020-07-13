@@ -7,7 +7,7 @@ function CommunityScreen({navigation}) {
       <Text>Details Screen</Text>
       <Button 
       title = 'Details'
-      onPress = {() =>navigation.navigate('Details')}
+      onPress = {() =>navigation.navigate('Forest')}
       />
     </View>
   );
