@@ -12,7 +12,9 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         {/* Where you name the header */}
-        <Stack.Screen name='Home' component={MainTabScreen} />
+        <Stack.Screen name='Home' component={MainTabScreen}         
+        options={{ title: 'EnviroBuddy' }}
+ />
       </Stack.Navigator>
     </NavigationContainer>
   );

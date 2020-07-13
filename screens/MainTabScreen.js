@@ -29,6 +29,8 @@ const MainTabScreen = () => (
           <Icon name="ios-home" color={color} size={26} />
         ),
       }}
+
+      
     />
     <Tab.Screen
       name='Community'
