@@ -1,31 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import MainTabScreen from './screens/MainTabScreen';
+import React, { useState } from 'react';
+import { Text, View } from 'react-native';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
-const Stack = createStackNavigator();
+import MealsNavigator from './navigation/MealsNavigator';
 
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        {/* Where you name the header */}
-        <Stack.Screen name='Home' component={MainTabScreen}         
-        options={{ title: 'EnviroBuddy' }}
- />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+const fetchFonts = () => {
+  return Font.loadAsync({
+    'tnr': require('./assets/fonts/a.ttf')
+  });
+};
+
+export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  if (!fontLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setFontLoaded(true)}
+      />
+    );
+  }
+
+  return <MealsNavigator />;
 }
-
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
-});
