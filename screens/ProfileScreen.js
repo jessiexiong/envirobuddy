@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 
-const ExploreScreen = ({navigation}) => {
+const ProfileScreen = ({navigation}) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#00e3'}}>
       <Text>Home Screen</Text>
@@ -13,4 +13,4 @@ const ExploreScreen = ({navigation}) => {
   );
 }
 
-  export default ExploreScreen;
+  export default ProfileScreen;
