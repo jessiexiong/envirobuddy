@@ -7,12 +7,18 @@ import MainTabScreen from './screens/MainTabScreen';
 
 const Stack = createStackNavigator();
 
-const App = () => {
+const App = ({navigation}) => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        {/* Where you name the header */}
-        <Stack.Screen name='Home' component={MainTabScreen} />
+      <Stack.Navigator >
+        <Stack.Screen name='Home' component={MainTabScreen}         
+        options={{ 
+          headerShown: false,
+
+      }}
+   
+ />
+ 
       </Stack.Navigator>
     </NavigationContainer>
   );

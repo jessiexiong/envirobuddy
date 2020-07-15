@@ -1,18 +1,17 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 
-function CommunityScreen({navigation}) {
+function EditProfileScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
+      <Text>Home Screen</Text>
       <Button 
-      title = 'Details'
-      onPress = {() =>navigation.navigate('Forest')}
+      title = 'Home'
+      onPress = {() => navigation.navigate('Home')}
       />
     </View>
   );
 }
 
 
-
-  export default CommunityScreen;
+  export default EditProfileScreen;
