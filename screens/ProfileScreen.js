@@ -26,7 +26,7 @@ const ProfileScreen = ({navigation}) => {
 
           size={80}
           />
-          <SafeAreaView style={{marginLeft: 10, adjustItems: 'center'}}>
+          <SafeAreaView style={{marginLeft: 10}}>
             <Text style={[styles.titleName, {marginTop: 19}]}>John Doe: Level 1 Gardener</Text>
             <Caption style={styles.caption}>@jess</Caption>
           </SafeAreaView>
