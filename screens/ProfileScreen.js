@@ -23,7 +23,7 @@ const ProfileScreen = ({navigation}) => {
       <View style={{alignItems: 'flex-end'}}>
             <Button 
             title="edit"
-            onPress={() => navigation.navigate('Mess')}
+            onPress={() => navigation.navigate('Edit Profile')}
                         />
             <Button 
             title="mess"
@@ -59,14 +59,15 @@ const ProfileScreen = ({navigation}) => {
       </View>
 
       <View style={[styles.infoBoxWrapper, {marginTop: 10}]}>
+
         <View style={[styles.infoBox,
         {borderRightColor: '#dddddd', borderRightWidth: 1}]}
         >
-          <Title style={styles.title}>Youra Balance</Title>
+          <Title style={styles.title}>Your Balance</Title>
           <Caption>49,000</Caption>
         </View>
         <View style={styles.infoBox}>
-          <Title style={styles.title}>Yourarewards</Title>
+          <Title style={styles.title}>Your rewards</Title>
           <Caption>4</Caption>
         </View>
       </View>

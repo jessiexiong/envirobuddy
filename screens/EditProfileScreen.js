@@ -1,19 +1,24 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, StatusBar, ImageBackground } from 'react-native';
+import { View, TextInput, BottomSheet, StyleSheet, Text, ImageBackground } from 'react-native';
 import {
   Avatar, Caption, Title, TouchableRipple
 } from 'react-native-paper';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialIcons from 'react-native-vector-icons/FontAwesome';
+
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Animated from 'react-native-reanimated';
 
 function EditProfileScreen({navigation}) {
+
+
   return (
     <View style={styles.container}>
       <View style={{margin: 20}}>
         <View style={{alignItems: 'center'}}>
           <TouchableOpacity
-          onPress={()=>navigation.navigate('Profile')}>
+          onPress={()=>{}}>
             <View style={{
               height: 100,
               width: 100,
@@ -32,7 +37,7 @@ function EditProfileScreen({navigation}) {
                       justifyContent: 'center',
                       alignItems: 'center'
                     }}>
-                      <FontAwesome name='music' size={30} color='white' style={{
+                      <FontAwesome name='file-photo-o' size={30} color='white' style={{
                         opacity: 0.5,
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -46,10 +51,57 @@ function EditProfileScreen({navigation}) {
               </ImageBackground>
 
             </View>
-            <Text>Yuh</Text>
           </TouchableOpacity>
+        </View>
+
+{/*Text input*/}
+        <View style={[styles.action]}>
+        <FontAwesome name='user-o' size={20}/>
+       
+        <TextInput
+        placeholder='First Name'
+        placeholderTextColor='#666666'
+        autoCorrect={false}
+        style={[styles.textInput]}
+        ></TextInput>
+       
+        </View>
+        <View style={styles.action}>
+        <FontAwesome name='user-o' size={20}/>
+        <TextInput
+        placeholder='Last Name'
+        placeholderTextColor='#666666'
+        autoCorrect={false}
+        style={[styles.textInput]}
+        ></TextInput>
+        </View>
+        <View style={styles.action}>
+        <FontAwesome name='phone' size={20}/>
+        <TextInput
+        placeholder='Phone Number'
+        placeholderTextColor='#666666'
+        autoCorrect={false}
+        style={[styles.textInput]}
+        >6471111111</TextInput>
+        </View>
+        <View style={styles.action}>
+        <FontAwesome name='map-marker' size={20}/>
+        <View style={{marginLeft:5}}>
+        <TextInput
+        placeholder='Postal Code'
+        placeholderTextColor='#666666'
+        autoCorrect={false}
+        style={[styles.textInput]}
+        ></TextInput>
+        </View>
 
         </View>
+        
+        <TouchableOpacity style={styles.commandButton}>
+          
+          <Text style={styles.panelButtonTitle}>Update</Text>
+        </TouchableOpacity>
+
 
       </View>
     </View>
@@ -145,5 +197,7 @@ function EditProfileScreen({navigation}) {
       marginTop: Platform.OS === 'ios' ? 0 : -12,
       paddingLeft: 10,
       color: '#05375a',
+      borderEndColor: '#666666'
     },
+
   });

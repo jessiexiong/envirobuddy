@@ -61,7 +61,7 @@ const MainTabScreen = () => (
         tabBarLabel: 'Garden',
         
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-compass" color={color} size={26} />
+          <Foundation name="trees" color={color} size={26} />
         ),
       }}
     />

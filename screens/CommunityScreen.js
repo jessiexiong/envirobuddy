@@ -12,7 +12,7 @@ var images = [
     { id: 1, src: require('../assets/1.jpg') },
     { id: 2, src: require('../assets/2.jpg') },
     { id: 3, src: require('../assets/3.jpg') },
-    { id: 4, src: require('../assets/4.png') },
+    { id: 4, src: require('../assets/germany.jpg') },
   ]
 
 function CommunityScreen({navigation}) {
@@ -29,7 +29,10 @@ function CommunityScreen({navigation}) {
               return(
                 //image creation and button
                   <View 
-                  style= {{flexDirection: 'row'}}>
+
+            key={image.id}
+                  style= {{flexDirection: 'row'}}
+                  >
                     <View style={[{justifyContent: 'center'}]}>
             {/*Modal*/}
             <View style={{justifyContent: 'center', alignItems: 'center'}}>
@@ -46,14 +49,14 @@ function CommunityScreen({navigation}) {
                   <Text style={styles.modalText}>Are you sure you want to purchase Greece tickets?</Text>
                   {/*Buttons */}
                   <View style={{ flexDirection: 'row', marginTop: 70}}>
-                  <TouchableHighlight
+                  <TouchableOpacity
                     style={{ ...styles.confirmButton}}
                     onPress={() => {
                       setModalVisible(!modalVisible);
                     }}
                   >
                     <Text style={styles.buttonFont}>Confirm</Text>
-                  </TouchableHighlight>
+                  </TouchableOpacity>
                   <TouchableHighlight
                     style={{ ...styles.cancelButton}}
                     onPress={() => {
@@ -71,7 +74,7 @@ function CommunityScreen({navigation}) {
             </View>
             </View>
 
-            <View style={{justifyContent: 'center', flex: 1, alignItems: 1}}>
+            <View style={{justifyContent: 'center', alignItems: 1}}>
             <TouchableHighlight
               style={[styles.openButton, {marginLeft: 20, marginRight: 20}]}
               onPress={() => {
@@ -84,8 +87,7 @@ function CommunityScreen({navigation}) {
 
             {/*image*/}
             <Animated.View
-            key={image.id}
-            style={{height: 330, width: SCREEN_WIDTH, padding: 15, flex:2}}
+            style={{height: 300, padding: 4, flex:2}}
             >
                 <Image source={image.src}
                 style={{flex: 1, height:null, width:null, resizeMode: 'cover',
