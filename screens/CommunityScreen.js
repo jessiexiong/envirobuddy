@@ -67,7 +67,11 @@ function CommunityScreen({navigation}) {
                 </View>
               </View>
             </Modal>
-      <View style={{justifyContent: 'center', flex: 1, alignItems: 1}}>
+
+            </View>
+            </View>
+
+            <View style={{justifyContent: 'center', flex: 1, alignItems: 1}}>
             <TouchableHighlight
               style={[styles.openButton, {marginLeft: 20, marginRight: 20}]}
               onPress={() => {
@@ -77,13 +81,11 @@ function CommunityScreen({navigation}) {
               <Text style={styles.textStyle}>25,000</Text>
             </TouchableHighlight>
             </View>
-            </View>
-            </View>
 
             {/*image*/}
             <Animated.View
             key={image.id}
-            style={{height: SCREEN_HEIGHT*0.3, width: SCREEN_WIDTH*.65, padding: 15, }}
+            style={{height: 330, width: SCREEN_WIDTH, padding: 15, flex:2}}
             >
                 <Image source={image.src}
                 style={{flex: 1, height:null, width:null, resizeMode: 'cover',
