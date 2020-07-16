@@ -5,15 +5,21 @@ import {
 } from 'react-native-paper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import EditProfileScreen from './EditProfileScreen'
-
+var images = [
+    { id: 1, src: require('../assets/1.jpg') },
+    { id: 2, src: require('../assets/2.jpg') },
+    { id: 3, src: require('../assets/3.jpg') },
+    { id: 4, src: require('../assets/germany.jpg') },
+  ]
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ProfileScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* for the avatar, name & caption */}
-      <View style={styles.userInfoSection}> 
+      <ScrollView>
+ {/* for the avatar, name & caption */}
+ <View style={styles.userInfoSection}> 
       <View style={{alignItems: 'flex-end'}}>
             <Button 
             title="edit"
@@ -87,6 +93,8 @@ const ProfileScreen = ({navigation}) => {
           </View>
         </TouchableRipple>
       </View>
+      </ScrollView>
+     
     </SafeAreaView>
   );
 }
