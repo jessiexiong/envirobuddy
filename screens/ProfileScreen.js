@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, StatusBar,ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, Button, ScrollView, Image, Animated, Dimensions } from 'react-native';
 import {
   Avatar, Caption, Title, TouchableRipple
 } from 'react-native-paper';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import EditProfileScreen from './EditProfileScreen'
 
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -13,7 +14,18 @@ const ProfileScreen = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       {/* for the avatar, name & caption */}
       <View style={styles.userInfoSection}> 
+      <View style={{alignItems: 'flex-end'}}>
+            <Button 
+            title="edit"
+            onPress={() => navigation.navigate('Mess')}
+                        />
+            <Button 
+            title="mess"
+            onPress={() => navigation.navigate('Mess')}
+            />
+              </View>
         <View style={{flexDirection: 'row',}}>
+          
           <Avatar.Image
           style=
               {{
@@ -26,23 +38,29 @@ const ProfileScreen = ({navigation}) => {
 
           size={80}
           />
+
+
           <SafeAreaView style={{marginLeft: 10,}}>
             <Text style={[styles.titleName]}>John Doe:</Text>
-            <Text style= {styles.title}> Level 1 Gardener</Text>
+            <Text style= {styles.title}> Level 1 </Text>
             <Caption style={styles.caption}>@jess</Caption>
+            
+
           </SafeAreaView>
+
+
         </View>
       </View>
 
-      <View style={[styles.infoBoxWrapper, {marginTop: 50}]}>
+      <View style={[styles.infoBoxWrapper, {marginTop: 10}]}>
         <View style={[styles.infoBox,
         {borderRightColor: '#dddddd', borderRightWidth: 1}]}
         >
-          <Title style={styles.title}>Your Balance</Title>
+          <Title style={styles.title}>Youra Balance</Title>
           <Caption>49,000</Caption>
         </View>
         <View style={styles.infoBox}>
-          <Title style={styles.title}>Your rewards</Title>
+          <Title style={styles.title}>Yourarewards</Title>
           <Caption>4</Caption>
         </View>
       </View>
@@ -83,7 +101,6 @@ const ProfileScreen = ({navigation}) => {
     },
     userInfoSection: {
       paddingHorizontal: 30,
-      marginTop: 25,
     },
     titleName: {
       fontFamily: 'Times New Roman',
@@ -95,7 +112,8 @@ const ProfileScreen = ({navigation}) => {
       fontFamily: 'Times New Roman',
       fontWeight: 'bold',
       fontSize: 24,
-      letterSpacing: -1.5
+      letterSpacing: -1.5,
+      marginTop: -6
       
     },
     caption: {

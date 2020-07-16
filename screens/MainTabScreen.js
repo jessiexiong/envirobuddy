@@ -5,16 +5,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Foundation from 'react-native-vector-icons/Foundation';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 
 
 
 import HomeScreen from './HomeScreen';
 import CommunityScreen from './CommunityScreen';
 import ProfileScreen from './ProfileScreen';
-import ForestScreen from './ForestScreen';
+import BadgesScreen from './BadgesScreen';
 import GardenScreen from './GardenScreen';
-
 import EditProfileScreen from './EditProfileScreen';
+import Mess from './Mess';
 
 
 const HomeStack = createStackNavigator();
@@ -52,16 +54,28 @@ const MainTabScreen = () => (
         ),
       }}
     />
-   <Tab.Screen
-      name="Forest" //this name is what you use to help navigate
-      component={ForestScreen}
+     <Tab.Screen
+      name="Garden"
+      component={GardenStackScreen}
       options={{
-        tabBarLabel: 'Forest',
+        tabBarLabel: 'Garden',
+        
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-person" color={color} size={26} />
+          <Icon name="ios-compass" color={color} size={26} />
+        ),
+      }}
+    />
+   <Tab.Screen
+      name="Badges" //this name is what you use to help navigate
+      component={BadgesScreen}
+      options={{
+        tabBarLabel: 'Badges',
+        tabBarIcon: ({ color }) => (
+          <FontAwesome5 name="award" color={color} size={26} />
         ),
       }}
     /> 
+
         <Tab.Screen
       name="Profile"
       component={ProfileStackScreen}
@@ -73,35 +87,8 @@ const MainTabScreen = () => (
         ),
       }}
     />
+
   </Tab.Navigator>
-);
-
-const GardenStackScreen = ({navigation}) => (
-  <GardenStack.Navigator  
-  screenOptions={{ 
-    //turns the header off and on 
-    headerShown: true,
-    headerTitleStyle: {
-        fontFamily: 'Times New Roman',
-        fontWeight: 'bold',
-        fontSize: 39,
-        letterSpacing: -3.5,
-      },
-    headerStyle:{
-      shadowColor: '#fff'
-    },
-
-
-}}>
-    <GardenStack.Screen 
-    name="Garden" 
-    component={GardenScreen} 
-    options={{  
-    headerTitle: 'Garden',
-  }}
-    />
-  </GardenStack.Navigator>
-
 );
 
 const HomeStackScreen = ({navigation}) => (
@@ -152,7 +139,6 @@ const HomeStackScreen = ({navigation}) => (
 );
 
 const CommunityStackScreen = ({navigation}) => (
-  navigation.setOptions({ tabBarVisible: false }),
     <HomeStack.Navigator  
     screenOptions={{ 
       //turns the header off and on 
@@ -189,10 +175,10 @@ const CommunityStackScreen = ({navigation}) => (
       ),
   }}>
       <CommunityStack.Screen 
-      name="Home" 
+      name="Community" 
       component={CommunityScreen} 
       options={{  
-      headerTitle: 'Home',
+      headerTitle: 'Community',
     }}
       />
     </HomeStack.Navigator>
@@ -214,31 +200,7 @@ const ProfileStackScreen = ({navigation}) => (
     headerStyle:{
       shadowColor: '#fff'
     },
-    // headerLeft: () =>(
-    //   <View style={{marginLeft: 20, }}>
-    //   <Foundation.Button
-    //           name="trees"
-    //           size={30}
-    //           backgroundColor= 'white'
-    //           color= '#3a7838'
-    //           onPress={() => navigation.navigate('Home')}
-    //         />
-    //   </View>
 
-    //   ),
-    headerRight: ()=>(
-      <View >
-      <FontAwesome.Button
-              name="edit"
-              size={25}
-              backgroundColor= 'white'
-              color= 'black'
-              onPress={() => navigation.navigate('Edit Profile')}
-            />
-      </View>
-
-
-    ),
 }}>
     <ProfileStack.Screen 
     name="Profile" 
@@ -254,10 +216,59 @@ const ProfileStackScreen = ({navigation}) => (
     headerTitle: 'Edit Profile',
   }}
     />
+    <ProfileStack.Screen 
+    name="Mess" 
+    component={Mess} 
+    options={{  
+    headerTitle: 'Mess',
+  }}
+    />
+
   </ProfileStack.Navigator>
 
 );
 
+const GardenStackScreen = ({navigation}) => (
+  navigation.setOptions({ tabBarVisible: false }),
+
+  <GardenStack.Navigator  
+  screenOptions={{ 
+    //turns the header off and on 
+    headerShown: false,
+    headerTitleStyle: {
+        fontFamily: 'Times New Roman',
+        fontWeight: 'bold',
+        fontSize: 39,
+        letterSpacing: -3.5,
+      },
+    headerStyle:{
+      shadowColor: '#fff'
+    },
+    headerLeft: () =>(
+      <View style={{marginLeft: 20, }}>
+      <FontAwesome.Button
+              style = {{justifyContent: 'center'}}
+              name="step-backward"
+              size={30}
+              backgroundColor= 'white'
+              color= '#3a7838'
+              onPress={() => navigation.goBack()}
+            />
+      </View>
+      ),
+
+
+}}>
+    <GardenStack.Screen 
+    name="Garden" 
+    component={GardenScreen} 
+    options={{  
+    headerTitle: 'Garden',
+  }}
+    />
+  </GardenStack.Navigator>
+
+);
 
 
 export default MainTabScreen;
