@@ -47,7 +47,7 @@ const ProfileScreen = ({navigation}) => {
 
 
           <SafeAreaView style={{marginLeft: 10,}}>
-            <Text style={[styles.titleName]}>John Doe:</Text>
+            <Text style={[styles.titleName]}>Jessie Xiong:</Text>
             <Text style= {styles.title}> Level 1 </Text>
             <Caption style={styles.caption}>@jess</Caption>
             

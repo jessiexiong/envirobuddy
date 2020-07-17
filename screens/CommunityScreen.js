@@ -12,7 +12,7 @@ var images = [
     { id: 1, src: require('../assets/1.jpg') },
     { id: 2, src: require('../assets/2.jpg') },
     { id: 3, src: require('../assets/3.jpg') },
-    { id: 4, src: require('../assets/germany.jpg') },
+    { id: 4, src: require('../assets/4.jpeg') },
   ]
 
 function CommunityScreen({navigation}) {

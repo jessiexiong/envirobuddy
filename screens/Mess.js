@@ -1,75 +1,23 @@
-import React , { useState } from 'react';
-import { View, Text, TouchableHighlight, Button, StyleSheet, TouchableOpacity, Modal} from 'react-native';
+import React , { useState, useRef } from 'react';
+import { View, FlatList, TouchableHighlight, Button, StyleSheet, TouchableOpacity, Modal} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import ModalComponent from './modal'
+import RBSheet from "react-native-raw-bottom-sheet";
 
 function Mess({navigation}) {
 
-  const [modalVisible, setModalVisible] = useState(false);
   
   return (
-    <View style={{ flex: 1, }}>
-      <Text>Mess</Text>
-      <Button 
-      title = 'Home'
-      onPress = {() => {this.setState({isModalVisible: !this.state.isModalVisible})}}
-      />
-      {/* <View>
-      <Modal transparent={true} visible={true}>
-        <View style={{backgroundColor: '#000000aa', flex:1}}>
-          <View style={{ margin: 50, padding:40, backgroundColor: '#fffff'}}>
-            <Text style={{fontSize: 50}}>I am the modal content!</Text>
-          </View>
-          </View>
-        </Modal>
-      </View> */}
-       
-    
+    <FlatList 
+    numColumns={2}
       
-      <FontAwesome.Button
-              name="edit"
-              size={25}
-              backgroundColor= 'white'
-              color= 'black'
-              onPress={() => {navigation.navigate('Edit Profile')}}
-              />
- <View style={styles.centeredView}>
-            <Modal
-              animationType="slide"
-              transparent={true}
-              visible={modalVisible}
-              onRequestClose={() => {
-                Alert.alert("Modal has been closed.");
-              }}
-            >
-              <View style={styles.centeredView}>
-                <View style={styles.modalView}>
-                  <Text style={styles.modalText}>Hello World!</Text>
-      
-                  <TouchableHighlight
-                    style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
-                    onPress={() => {
-                      setModalVisible(!modalVisible);
-                    }}
-                  >
-                    <Text style={styles.textStyle}>Hide Modal</Text>
-                  </TouchableHighlight>
-                </View>
-              </View>
-            </Modal>
-      
-            <TouchableHighlight
-              style={styles.openButton}
-              onPress={() => {
-                setModalVisible(true);
-              }}
-            >
-              <Text style={styles.textStyle}>Show Modal</Text>
-            </TouchableHighlight>
-          </View>
-          </View>
+
+
+    />
 
   );
+
+
 }
 
 const styles= StyleSheet.create({

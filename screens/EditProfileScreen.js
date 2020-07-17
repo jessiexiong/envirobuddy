@@ -4,6 +4,7 @@ import {
   Avatar, Caption, Title, TouchableRipple
 } from 'react-native-paper';
 
+
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/FontAwesome';
 
